@@ -1,0 +1,14 @@
+name: test latest dependency versions and external web links
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  # Lint all Markdown files in the project.
+  markdown-lint:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: DavidAnson/markdownlint-cli2-action@v12
+          with:
+            globs: '**/*.md'
