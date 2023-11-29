@@ -466,6 +466,7 @@
 <span class="sd">        :param table_or_collection: The collection on which change was observed.</span>
 <span class="sd">        :param event: CDC event type</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cdc_query</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="c1"># TODO why was this logic here? Why is the query always the same?</span>
         <span class="c1"># if event != DBEvent.delete:</span>
         <span class="n">cdc_query</span> <span class="o">=</span> <span class="n">table_or_collection</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
