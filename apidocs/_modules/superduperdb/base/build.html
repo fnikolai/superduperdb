@@ -275,7 +275,7 @@
 <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="n">mapping</span><span class="p">):</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parsing data connection URI:</span><span class="si">{</span><span class="n">uri</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^mongodb:\/\/&#39;</span><span class="p">,</span> <span class="n">uri</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^mongodb:\/\/&#39;</span><span class="p">,</span> <span class="n">uri</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">uri</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
         <span class="n">conn</span> <span class="o">=</span> <span class="n">pymongo</span><span class="o">.</span><span class="n">MongoClient</span><span class="p">(</span>
             <span class="n">uri</span><span class="p">,</span>
@@ -283,7 +283,7 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">mapping</span><span class="p">[</span><span class="s1">&#39;mongodb&#39;</span><span class="p">](</span><span class="n">conn</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
-    <span class="k">elif</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^mongodb\+srv:\/\/&#39;</span><span class="p">,</span> <span class="n">uri</span><span class="p">):</span>
+    <span class="k">elif</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^mongodb\+srv:\/\/&#39;</span><span class="p">,</span> <span class="n">uri</span><span class="p">):</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">uri</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
         <span class="n">conn</span> <span class="o">=</span> <span class="n">pymongo</span><span class="o">.</span><span class="n">MongoClient</span><span class="p">(</span>
             <span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">uri</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
@@ -321,11 +321,13 @@
 
 <div class="viewcode-block" id="build_datalayer">
 <a class="viewcode-back" href="../../../source/superduperdb.base.html#superduperdb.base.build.build_datalayer">[docs]</a>
-<span class="k">def</span> <span class="nf">build_datalayer</span><span class="p">(</span><span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Datalayer</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">build_datalayer</span><span class="p">(</span><span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">databackend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Datalayer</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Build a Datalayer object as per ``db = superduper(db)`` from configuration.</span>
 
 <span class="sd">    :param cfg: Configuration to use. If None, use ``superduperdb.CFG``.</span>
+<span class="sd">    :param databackend: Databacked to use.</span>
+<span class="sd">                        If None, use ``superduperdb.CFG.data_backend``.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c1"># Configuration</span>
@@ -340,7 +342,8 @@
     <span class="c1"># Connect to data backend.</span>
     <span class="c1"># ------------------------------</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">databackend</span> <span class="o">=</span> <span class="n">build</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">data_backend</span><span class="p">,</span> <span class="n">data_backends</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">databackend</span><span class="p">:</span>
+            <span class="n">databackend</span> <span class="o">=</span> <span class="n">build</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">data_backend</span><span class="p">,</span> <span class="n">data_backends</span><span class="p">)</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Data Client is ready.&quot;</span><span class="p">,</span> <span class="n">databackend</span><span class="o">.</span><span class="n">conn</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="c1"># Exit quickly if a connection fails.</span>

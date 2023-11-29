@@ -255,9 +255,9 @@
 <div class="viewcode-block" id="BaseConfigJSONable.force_set">
 <a class="viewcode-back" href="../../../source/superduperdb.base.html#superduperdb.base.config.BaseConfigJSONable.force_set">[docs]</a>
     <span class="k">def</span> <span class="nf">force_set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Forcefully setattr of BaseConfigJSONable instance</span>
-<span class="sd">        &#39;&#39;&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
 
 
@@ -276,7 +276,8 @@
 <div class="viewcode-block" id="Retry">
 <a class="viewcode-back" href="../../../source/superduperdb.base.html#superduperdb.base.config.Retry">[docs]</a>
 <span class="k">class</span> <span class="nc">Retry</span><span class="p">(</span><span class="n">BaseConfigJSONable</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Describes how to retry using the `tenacity` library</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Describes how to retry using the `tenacity` library</span>
 
 <span class="sd">    :param stop_after_attempt: The number of attempts to make</span>
 <span class="sd">    :param wait_max: The maximum time to wait between attempts</span>
@@ -294,7 +295,8 @@
 <div class="viewcode-block" id="Cluster">
 <a class="viewcode-back" href="../../../source/superduperdb.base.html#superduperdb.base.config.Cluster">[docs]</a>
 <span class="k">class</span> <span class="nc">Cluster</span><span class="p">(</span><span class="n">BaseConfigJSONable</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Describes a connection to distributed work via Dask</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Describes a connection to distributed work via Dask</span>
 
 <span class="sd">    :param backfill_batch_size: The number of rows to backfill at a time</span>
 <span class="sd">                                for vector-search loading</span>
@@ -314,8 +316,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">compute</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;local&#39;</span>  <span class="c1"># &#39;dask+tcp://local&#39;, &#39;dask+thread&#39;, &#39;local&#39;</span>
-    <span class="n">vector_search</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1">#&#39;http://localhost:8000&#39;  # None</span>
-    <span class="n">cdc</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1">#&#39;http://localhost:8001&#39;  # None</span>
+    <span class="n">vector_search</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># &#39;http://localhost:8000&#39;  # None</span>
+    <span class="n">cdc</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># &#39;http://localhost:8001&#39;  # None</span>
     <span class="n">backfill_batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span></div>
 
 
@@ -323,7 +325,9 @@
 <div class="viewcode-block" id="LogLevel">
 <a class="viewcode-back" href="../../../source/superduperdb.base.html#superduperdb.base.config.LogLevel">[docs]</a>
 <span class="k">class</span> <span class="nc">LogLevel</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumerate log severity level&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Enumerate log severity level</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">DEBUG</span> <span class="o">=</span> <span class="s1">&#39;DEBUG&#39;</span>
     <span class="n">INFO</span> <span class="o">=</span> <span class="s1">&#39;INFO&#39;</span>
@@ -336,7 +340,9 @@
 <div class="viewcode-block" id="LogType">
 <a class="viewcode-back" href="../../../source/superduperdb.base.html#superduperdb.base.config.LogType">[docs]</a>
 <span class="k">class</span> <span class="nc">LogType</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enumerate the standard logs&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Enumerate the standard logs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c1"># SYSTEM uses the systems STDOUT and STDERR for printing the logs.</span>
     <span class="c1"># DEBUG, INFO, and WARN go to STDOUT.</span>
@@ -351,7 +357,8 @@
 <div class="viewcode-block" id="Config">
 <a class="viewcode-back" href="../../../source/superduperdb.base.html#superduperdb.base.config.Config">[docs]</a>
 <span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="n">BaseConfigJSONable</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;The data class containing all configurable superduperdb values</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The data class containing all configurable superduperdb values</span>
 
 <span class="sd">    :param data_backend: The URI for the data backend</span>
 <span class="sd">    :param vector_search: The configuration for the vector search {&#39;in_memory&#39;, &#39;lance&#39;}</span>
@@ -390,11 +397,19 @@
     <span class="n">log_level</span><span class="p">:</span> <span class="n">LogLevel</span> <span class="o">=</span> <span class="n">LogLevel</span><span class="o">.</span><span class="n">DEBUG</span>
     <span class="n">logging_type</span><span class="p">:</span> <span class="n">LogType</span> <span class="o">=</span> <span class="n">LogType</span><span class="o">.</span><span class="n">SYSTEM</span>
 
+    <span class="n">dot_env</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
 <div class="viewcode-block" id="Config.Config">
 <a class="viewcode-back" href="../../../source/superduperdb.base.html#superduperdb.base.config.Config.Config">[docs]</a>
     <span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="n">JSONable</span><span class="o">.</span><span class="n">Config</span><span class="p">):</span>
         <span class="n">protected_namespaces</span> <span class="o">=</span> <span class="p">()</span></div>
 
+
+    <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dot_env</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">dotenv</span>
+
+            <span class="n">dotenv</span><span class="o">.</span><span class="n">load_dotenv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dot_env</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">hybrid_storage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -416,9 +431,10 @@
 <span class="sd">        Match the target cfg dict with `self` comparables dict.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">self_cfg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparables</span>
-        <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">self_cfg</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span> <span class="o">==</span> <span class="nb">hash</span><span class="p">(</span>
-            <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="p">)</span></div>
+
+        <span class="n">self_hash</span> <span class="o">=</span> <span class="nb">hash</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">self_cfg</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+        <span class="n">cfg_hash</span> <span class="o">=</span> <span class="nb">hash</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">self_hash</span> <span class="o">==</span> <span class="n">cfg_hash</span></div>
 
 
 <div class="viewcode-block" id="Config.force_set">

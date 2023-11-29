@@ -385,7 +385,7 @@
             <span class="n">vector_index</span><span class="o">.</span><span class="n">indexing_listener</span><span class="o">.</span><span class="n">select</span><span class="o">.</span><span class="n">table_or_collection</span><span class="o">.</span><span class="n">identifier</span>
         <span class="p">)</span>
         <span class="n">key</span> <span class="o">=</span> <span class="n">vector_index</span><span class="o">.</span><span class="n">indexing_listener</span><span class="o">.</span><span class="n">key</span>
-        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^_outputs\.[A-Za-z0-9_]+\.[A-Za-z0-9_]+&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^_outputs\.[A-Za-z0-9_]+\.[A-Za-z0-9_]+&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
             <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">vector_index</span><span class="o">.</span><span class="n">indexing_listener</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">identifier</span>
         <span class="n">version</span> <span class="o">=</span> <span class="n">vector_index</span><span class="o">.</span><span class="n">indexing_listener</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">version</span>
@@ -433,8 +433,18 @@
         <span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">index_definition</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">dry_run</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="n">index_definition</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MongoDataBackend.disconnect">
+<a class="viewcode-back" href="../../../../source/superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.data_backend.MongoDataBackend.disconnect">[docs]</a>
+    <span class="k">def</span> <span class="nf">disconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Disconnect the client</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
 </div>
 
+
+        <span class="c1"># TODO: implement me</span>
 </pre></div>
         </article>
       </div>

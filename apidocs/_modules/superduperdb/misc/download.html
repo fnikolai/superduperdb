@@ -543,7 +543,7 @@
 <div class="viewcode-block" id="_gather_uris_for_document">
 <a class="viewcode-back" href="../../../source/superduperdb.misc.html#superduperdb.misc.download._gather_uris_for_document">[docs]</a>
 <span class="k">def</span> <span class="nf">_gather_uris_for_document</span><span class="p">(</span><span class="n">r</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Dict</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    &gt;&gt;&gt; _gather_uris_for_document({&#39;a&#39;: {&#39;_content&#39;: {&#39;uri&#39;: &#39;test&#39;}}})</span>
 <span class="sd">    ([&#39;test&#39;], [&#39;a&#39;])</span>
 <span class="sd">    &gt;&gt;&gt; d = {&#39;b&#39;: {&#39;a&#39;: {&#39;_content&#39;: {&#39;uri&#39;: &#39;test&#39;}}}}</span>
@@ -552,7 +552,7 @@
 <span class="sd">    &gt;&gt;&gt; d = {&#39;b&#39;: {&#39;a&#39;: {&#39;_content&#39;: {&#39;uri&#39;: &#39;test&#39;, &#39;bytes&#39;: b&#39;abc&#39;}}}}</span>
 <span class="sd">    &gt;&gt;&gt; _gather_uris_for_document(d)</span>
 <span class="sd">    ([], [])</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">uris</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">keys</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
