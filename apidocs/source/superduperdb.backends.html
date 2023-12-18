@@ -169,6 +169,7 @@
 <li class="toctree-l5"><a class="reference internal" href="superduperdb.backends.mongodb.cdc.html">superduperdb.backends.mongodb.cdc package</a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ray.html">superduperdb.backends.ray package</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="superduperdb.base.html">superduperdb.base package</a></li>
@@ -277,13 +278,13 @@
 <li class="toctree-l3"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.compute.ComputeBackend"><code class="docutils literal notranslate"><span class="pre">ComputeBackend</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.compute.ComputeBackend.disconnect"><code class="docutils literal notranslate"><span class="pre">ComputeBackend.disconnect()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.compute.ComputeBackend.get_local_client"><code class="docutils literal notranslate"><span class="pre">ComputeBackend.get_local_client()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.compute.ComputeBackend.get_result"><code class="docutils literal notranslate"><span class="pre">ComputeBackend.get_result()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.compute.ComputeBackend.list_all_pending_tasks"><code class="docutils literal notranslate"><span class="pre">ComputeBackend.list_all_pending_tasks()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.compute.ComputeBackend.name"><code class="docutils literal notranslate"><span class="pre">ComputeBackend.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.compute.ComputeBackend.result"><code class="docutils literal notranslate"><span class="pre">ComputeBackend.result()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.compute.ComputeBackend.shutdown"><code class="docutils literal notranslate"><span class="pre">ComputeBackend.shutdown()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.compute.ComputeBackend.submit"><code class="docutils literal notranslate"><span class="pre">ComputeBackend.submit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.compute.ComputeBackend.tasks"><code class="docutils literal notranslate"><span class="pre">ComputeBackend.tasks</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.compute.ComputeBackend.type"><code class="docutils literal notranslate"><span class="pre">ComputeBackend.type</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.compute.ComputeBackend.wait_all_pending_tasks"><code class="docutils literal notranslate"><span class="pre">ComputeBackend.wait_all_pending_tasks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.compute.ComputeBackend.wait_all"><code class="docutils literal notranslate"><span class="pre">ComputeBackend.wait_all()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -427,7 +428,9 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.query.TableOrCollection"><code class="docutils literal notranslate"><span class="pre">TableOrCollection</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.query.TableOrCollection.identifier"><code class="docutils literal notranslate"><span class="pre">TableOrCollection.identifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.query.TableOrCollection.insert"><code class="docutils literal notranslate"><span class="pre">TableOrCollection.insert()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.query.TableOrCollection.like"><code class="docutils literal notranslate"><span class="pre">TableOrCollection.like()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.query.TableOrCollection.model_update"><code class="docutils literal notranslate"><span class="pre">TableOrCollection.model_update()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.query.TableOrCollection.query_components"><code class="docutils literal notranslate"><span class="pre">TableOrCollection.query_components</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.base.html#superduperdb.backends.base.query.TableOrCollection.type_id"><code class="docutils literal notranslate"><span class="pre">TableOrCollection.type_id</span></code></a></li>
 </ul>
@@ -448,13 +451,14 @@
 <li class="toctree-l2"><a class="reference internal" href="superduperdb.backends.dask.html#module-superduperdb.backends.dask.compute">superduperdb.backends.dask.compute module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="superduperdb.backends.dask.html#superduperdb.backends.dask.compute.DaskComputeBackend"><code class="docutils literal notranslate"><span class="pre">DaskComputeBackend</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.dask.html#superduperdb.backends.dask.compute.DaskComputeBackend.disconnect"><code class="docutils literal notranslate"><span class="pre">DaskComputeBackend.disconnect()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.dask.html#superduperdb.backends.dask.compute.DaskComputeBackend.get_result"><code class="docutils literal notranslate"><span class="pre">DaskComputeBackend.get_result()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.dask.html#superduperdb.backends.dask.compute.DaskComputeBackend.list_all_pending_tasks"><code class="docutils literal notranslate"><span class="pre">DaskComputeBackend.list_all_pending_tasks()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.dask.html#superduperdb.backends.dask.compute.DaskComputeBackend.name"><code class="docutils literal notranslate"><span class="pre">DaskComputeBackend.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.dask.html#superduperdb.backends.dask.compute.DaskComputeBackend.result"><code class="docutils literal notranslate"><span class="pre">DaskComputeBackend.result()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.dask.html#superduperdb.backends.dask.compute.DaskComputeBackend.shutdown"><code class="docutils literal notranslate"><span class="pre">DaskComputeBackend.shutdown()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.dask.html#superduperdb.backends.dask.compute.DaskComputeBackend.submit"><code class="docutils literal notranslate"><span class="pre">DaskComputeBackend.submit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.dask.html#superduperdb.backends.dask.compute.DaskComputeBackend.tasks"><code class="docutils literal notranslate"><span class="pre">DaskComputeBackend.tasks</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.dask.html#superduperdb.backends.dask.compute.DaskComputeBackend.type"><code class="docutils literal notranslate"><span class="pre">DaskComputeBackend.type</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.dask.html#superduperdb.backends.dask.compute.DaskComputeBackend.wait_all_pending_tasks"><code class="docutils literal notranslate"><span class="pre">DaskComputeBackend.wait_all_pending_tasks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.dask.html#superduperdb.backends.dask.compute.DaskComputeBackend.wait"><code class="docutils literal notranslate"><span class="pre">DaskComputeBackend.wait()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.dask.html#superduperdb.backends.dask.compute.DaskComputeBackend.wait_all"><code class="docutils literal notranslate"><span class="pre">DaskComputeBackend.wait_all()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -563,6 +567,7 @@
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ibis.html#superduperdb.backends.ibis.query.IbisQueryTable.execute"><code class="docutils literal notranslate"><span class="pre">IbisQueryTable.execute()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ibis.html#superduperdb.backends.ibis.query.IbisQueryTable.id_field"><code class="docutils literal notranslate"><span class="pre">IbisQueryTable.id_field</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ibis.html#superduperdb.backends.ibis.query.IbisQueryTable.insert"><code class="docutils literal notranslate"><span class="pre">IbisQueryTable.insert()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ibis.html#superduperdb.backends.ibis.query.IbisQueryTable.model_update"><code class="docutils literal notranslate"><span class="pre">IbisQueryTable.model_update()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ibis.html#superduperdb.backends.ibis.query.IbisQueryTable.outputs"><code class="docutils literal notranslate"><span class="pre">IbisQueryTable.outputs()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ibis.html#superduperdb.backends.ibis.query.IbisQueryTable.primary_id"><code class="docutils literal notranslate"><span class="pre">IbisQueryTable.primary_id</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ibis.html#superduperdb.backends.ibis.query.IbisQueryTable.repr_"><code class="docutils literal notranslate"><span class="pre">IbisQueryTable.repr_()</span></code></a></li>
@@ -624,13 +629,13 @@
 <li class="toctree-l2"><a class="reference internal" href="superduperdb.backends.local.html#module-superduperdb.backends.local.compute">superduperdb.backends.local.compute module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="superduperdb.backends.local.html#superduperdb.backends.local.compute.LocalComputeBackend"><code class="docutils literal notranslate"><span class="pre">LocalComputeBackend</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.local.html#superduperdb.backends.local.compute.LocalComputeBackend.disconnect"><code class="docutils literal notranslate"><span class="pre">LocalComputeBackend.disconnect()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.local.html#superduperdb.backends.local.compute.LocalComputeBackend.get_result"><code class="docutils literal notranslate"><span class="pre">LocalComputeBackend.get_result()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.local.html#superduperdb.backends.local.compute.LocalComputeBackend.list_all_pending_tasks"><code class="docutils literal notranslate"><span class="pre">LocalComputeBackend.list_all_pending_tasks()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.local.html#superduperdb.backends.local.compute.LocalComputeBackend.name"><code class="docutils literal notranslate"><span class="pre">LocalComputeBackend.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.local.html#superduperdb.backends.local.compute.LocalComputeBackend.result"><code class="docutils literal notranslate"><span class="pre">LocalComputeBackend.result()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.local.html#superduperdb.backends.local.compute.LocalComputeBackend.shutdown"><code class="docutils literal notranslate"><span class="pre">LocalComputeBackend.shutdown()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.local.html#superduperdb.backends.local.compute.LocalComputeBackend.submit"><code class="docutils literal notranslate"><span class="pre">LocalComputeBackend.submit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.local.html#superduperdb.backends.local.compute.LocalComputeBackend.tasks"><code class="docutils literal notranslate"><span class="pre">LocalComputeBackend.tasks</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.local.html#superduperdb.backends.local.compute.LocalComputeBackend.type"><code class="docutils literal notranslate"><span class="pre">LocalComputeBackend.type</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.local.html#superduperdb.backends.local.compute.LocalComputeBackend.wait_all_pending_tasks"><code class="docutils literal notranslate"><span class="pre">LocalComputeBackend.wait_all_pending_tasks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.local.html#superduperdb.backends.local.compute.LocalComputeBackend.wait_all"><code class="docutils literal notranslate"><span class="pre">LocalComputeBackend.wait_all()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -739,6 +744,7 @@
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.query.Collection.change_stream"><code class="docutils literal notranslate"><span class="pre">Collection.change_stream()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.query.Collection.delete_one"><code class="docutils literal notranslate"><span class="pre">Collection.delete_one()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.query.Collection.get_table"><code class="docutils literal notranslate"><span class="pre">Collection.get_table()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.query.Collection.insert"><code class="docutils literal notranslate"><span class="pre">Collection.insert()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.query.Collection.insert_many"><code class="docutils literal notranslate"><span class="pre">Collection.insert_many()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.query.Collection.insert_one"><code class="docutils literal notranslate"><span class="pre">Collection.insert_one()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.query.Collection.like"><code class="docutils literal notranslate"><span class="pre">Collection.like()</span></code></a></li>
@@ -746,6 +752,7 @@
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.query.Collection.primary_id"><code class="docutils literal notranslate"><span class="pre">Collection.primary_id</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.query.Collection.query_components"><code class="docutils literal notranslate"><span class="pre">Collection.query_components</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.query.Collection.replace_one"><code class="docutils literal notranslate"><span class="pre">Collection.replace_one()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.query.Collection.type_id"><code class="docutils literal notranslate"><span class="pre">Collection.type_id</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.query.Collection.update_many"><code class="docutils literal notranslate"><span class="pre">Collection.update_many()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.query.Collection.update_one"><code class="docutils literal notranslate"><span class="pre">Collection.update_one()</span></code></a></li>
 </ul>
@@ -826,6 +833,7 @@
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.Collection.delete_one"><code class="docutils literal notranslate"><span class="pre">Collection.delete_one()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.Collection.get_table"><code class="docutils literal notranslate"><span class="pre">Collection.get_table()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.Collection.identifier"><code class="docutils literal notranslate"><span class="pre">Collection.identifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.Collection.insert"><code class="docutils literal notranslate"><span class="pre">Collection.insert()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.Collection.insert_many"><code class="docutils literal notranslate"><span class="pre">Collection.insert_many()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.Collection.insert_one"><code class="docutils literal notranslate"><span class="pre">Collection.insert_one()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.Collection.like"><code class="docutils literal notranslate"><span class="pre">Collection.like()</span></code></a></li>
@@ -833,12 +841,33 @@
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.Collection.primary_id"><code class="docutils literal notranslate"><span class="pre">Collection.primary_id</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.Collection.query_components"><code class="docutils literal notranslate"><span class="pre">Collection.query_components</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.Collection.replace_one"><code class="docutils literal notranslate"><span class="pre">Collection.replace_one()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.Collection.type_id"><code class="docutils literal notranslate"><span class="pre">Collection.type_id</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.Collection.update_many"><code class="docutils literal notranslate"><span class="pre">Collection.update_many()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#superduperdb.backends.mongodb.Collection.update_one"><code class="docutils literal notranslate"><span class="pre">Collection.update_one()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="superduperdb.backends.ray.html">superduperdb.backends.ray package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="superduperdb.backends.ray.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="superduperdb.backends.ray.html#module-superduperdb.backends.ray.compute">superduperdb.backends.ray.compute module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="superduperdb.backends.ray.html#superduperdb.backends.ray.compute.RayComputeBackend"><code class="docutils literal notranslate"><span class="pre">RayComputeBackend</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ray.html#superduperdb.backends.ray.compute.RayComputeBackend.disconnect"><code class="docutils literal notranslate"><span class="pre">RayComputeBackend.disconnect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ray.html#superduperdb.backends.ray.compute.RayComputeBackend.name"><code class="docutils literal notranslate"><span class="pre">RayComputeBackend.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ray.html#superduperdb.backends.ray.compute.RayComputeBackend.result"><code class="docutils literal notranslate"><span class="pre">RayComputeBackend.result()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ray.html#superduperdb.backends.ray.compute.RayComputeBackend.shutdown"><code class="docutils literal notranslate"><span class="pre">RayComputeBackend.shutdown()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ray.html#superduperdb.backends.ray.compute.RayComputeBackend.submit"><code class="docutils literal notranslate"><span class="pre">RayComputeBackend.submit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ray.html#superduperdb.backends.ray.compute.RayComputeBackend.tasks"><code class="docutils literal notranslate"><span class="pre">RayComputeBackend.tasks</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ray.html#superduperdb.backends.ray.compute.RayComputeBackend.type"><code class="docutils literal notranslate"><span class="pre">RayComputeBackend.type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ray.html#superduperdb.backends.ray.compute.RayComputeBackend.wait"><code class="docutils literal notranslate"><span class="pre">RayComputeBackend.wait()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ray.html#superduperdb.backends.ray.compute.RayComputeBackend.wait_all"><code class="docutils literal notranslate"><span class="pre">RayComputeBackend.wait_all()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="superduperdb.backends.ray.html#module-superduperdb.backends.ray">Module contents</a></li>
 </ul>
 </li>
 </ul>

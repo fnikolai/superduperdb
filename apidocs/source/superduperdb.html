@@ -169,6 +169,7 @@
 <li class="toctree-l5"><a class="reference internal" href="superduperdb.backends.mongodb.cdc.html">superduperdb.backends.mongodb.cdc package</a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ray.html">superduperdb.backends.ray package</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="superduperdb.base.html">superduperdb.base package</a></li>
@@ -286,6 +287,12 @@
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#module-superduperdb.backends.mongodb.metadata">superduperdb.backends.mongodb.metadata module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#module-superduperdb.backends.mongodb.query">superduperdb.backends.mongodb.query module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.mongodb.html#module-superduperdb.backends.mongodb">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="superduperdb.backends.ray.html">superduperdb.backends.ray package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ray.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ray.html#module-superduperdb.backends.ray.compute">superduperdb.backends.ray.compute module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.backends.ray.html#module-superduperdb.backends.ray">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -486,7 +493,9 @@
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.base.html#superduperdb.base.document.Document.dump_bson"><code class="docutils literal notranslate"><span class="pre">Document.dump_bson()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.base.html#superduperdb.base.document.Document.encode"><code class="docutils literal notranslate"><span class="pre">Document.encode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.base.html#superduperdb.base.document.Document.outputs"><code class="docutils literal notranslate"><span class="pre">Document.outputs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.base.html#superduperdb.base.document.Document.set_variables"><code class="docutils literal notranslate"><span class="pre">Document.set_variables()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.base.html#superduperdb.base.document.Document.unpack"><code class="docutils literal notranslate"><span class="pre">Document.unpack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.base.html#superduperdb.base.document.Document.variables"><code class="docutils literal notranslate"><span class="pre">Document.variables</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="superduperdb.base.html#superduperdb.base.document.dump_bsons"><code class="docutils literal notranslate"><span class="pre">dump_bsons()</span></code></a></li>
@@ -662,6 +671,7 @@
 <li class="toctree-l3"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.component.Component"><code class="docutils literal notranslate"><span class="pre">Component</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.component.Component.child_components"><code class="docutils literal notranslate"><span class="pre">Component.child_components</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.component.Component.create_validation_job"><code class="docutils literal notranslate"><span class="pre">Component.create_validation_job()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.component.Component.db"><code class="docutils literal notranslate"><span class="pre">Component.db</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.component.Component.identifier"><code class="docutils literal notranslate"><span class="pre">Component.identifier</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.component.Component.make_unique_id"><code class="docutils literal notranslate"><span class="pre">Component.make_unique_id()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.component.Component.on_load"><code class="docutils literal notranslate"><span class="pre">Component.on_load()</span></code></a></li>
@@ -782,6 +792,19 @@
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.model.Model.training_keys"><code class="docutils literal notranslate"><span class="pre">Model.training_keys</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.model.Model.type_id"><code class="docutils literal notranslate"><span class="pre">Model.type_id</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.model.Model.validate"><code class="docutils literal notranslate"><span class="pre">Model.validate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.model.QueryModel"><code class="docutils literal notranslate"><span class="pre">QueryModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.model.QueryModel.postprocess"><code class="docutils literal notranslate"><span class="pre">QueryModel.postprocess</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.model.QueryModel.schedule_jobs"><code class="docutils literal notranslate"><span class="pre">QueryModel.schedule_jobs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.model.QueryModel.select"><code class="docutils literal notranslate"><span class="pre">QueryModel.select</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.model.SequentialModel"><code class="docutils literal notranslate"><span class="pre">SequentialModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.model.SequentialModel.on_load"><code class="docutils literal notranslate"><span class="pre">SequentialModel.on_load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.model.SequentialModel.post_create"><code class="docutils literal notranslate"><span class="pre">SequentialModel.post_create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.model.SequentialModel.predictors"><code class="docutils literal notranslate"><span class="pre">SequentialModel.predictors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.model.SequentialModel.schedule_jobs"><code class="docutils literal notranslate"><span class="pre">SequentialModel.schedule_jobs()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="superduperdb.components.html#superduperdb.components.model.TrainingConfiguration"><code class="docutils literal notranslate"><span class="pre">TrainingConfiguration()</span></code></a></li>
@@ -1347,10 +1370,20 @@ that resource to a mix of JSONable and <cite>bytes</cite></p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="superduperdb.Document.set_variables">
+<span class="sig-name descname"><span class="pre">set_variables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="superduperdb.base.html#superduperdb.base.document.Document" title="superduperdb.base.document.Document"><span class="pre">Document</span></a></span></span><a class="reference internal" href="../_modules/superduperdb/base/document.html#Document.set_variables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#superduperdb.Document.set_variables" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="superduperdb.Document.unpack">
 <span class="sig-name descname"><span class="pre">unpack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="../_modules/superduperdb/base/document.html#Document.unpack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#superduperdb.Document.unpack" title="Link to this definition">#</a></dt>
 <dd><p>Returns the content, but with any encodables replacecs by their contents</p>
 </dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="superduperdb.Document.variables">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">variables</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#superduperdb.Document.variables" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -2193,7 +2226,9 @@ using duck typing to recognize it.</p>
 <li><a class="reference internal" href="#superduperdb.Document.dump_bson"><code class="docutils literal notranslate"><span class="pre">Document.dump_bson()</span></code></a></li>
 <li><a class="reference internal" href="#superduperdb.Document.encode"><code class="docutils literal notranslate"><span class="pre">Document.encode()</span></code></a></li>
 <li><a class="reference internal" href="#superduperdb.Document.outputs"><code class="docutils literal notranslate"><span class="pre">Document.outputs()</span></code></a></li>
+<li><a class="reference internal" href="#superduperdb.Document.set_variables"><code class="docutils literal notranslate"><span class="pre">Document.set_variables()</span></code></a></li>
 <li><a class="reference internal" href="#superduperdb.Document.unpack"><code class="docutils literal notranslate"><span class="pre">Document.unpack()</span></code></a></li>
+<li><a class="reference internal" href="#superduperdb.Document.variables"><code class="docutils literal notranslate"><span class="pre">Document.variables</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#superduperdb.Encoder"><code class="docutils literal notranslate"><span class="pre">Encoder</span></code></a><ul>
