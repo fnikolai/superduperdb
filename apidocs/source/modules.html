@@ -180,10 +180,11 @@
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.ext.anthropic.html">superduperdb.ext.anthropic package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.ext.cohere.html">superduperdb.ext.cohere package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.ext.jina.html">superduperdb.ext.jina package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.ext.llm.html">superduperdb.ext.llm package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.ext.numpy.html">superduperdb.ext.numpy package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.ext.openai.html">superduperdb.ext.openai package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.ext.pillow.html">superduperdb.ext.pillow package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="superduperdb.ext.sentence_transformer.html">superduperdb.ext.sentence_transformer package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.ext.sentence_transformers.html">superduperdb.ext.sentence_transformers package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.ext.sklearn.html">superduperdb.ext.sklearn package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.ext.torch.html">superduperdb.ext.torch package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.ext.transformers.html">superduperdb.ext.transformers package</a></li>
@@ -334,6 +335,7 @@
 <li class="toctree-l3"><a class="reference internal" href="superduperdb.vector_search.html">superduperdb.vector_search package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.vector_search.html#subpackages">Subpackages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.vector_search.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.vector_search.html#module-superduperdb.vector_search.atlas">superduperdb.vector_search.atlas module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.vector_search.html#module-superduperdb.vector_search.base">superduperdb.vector_search.base module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.vector_search.html#module-superduperdb.vector_search.in_memory">superduperdb.vector_search.in_memory module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.vector_search.html#module-superduperdb.vector_search.interface">superduperdb.vector_search.interface module</a></li>
@@ -377,8 +379,10 @@
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Encoder.encode"><code class="docutils literal notranslate"><span class="pre">Encoder.encode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Encoder.encoder"><code class="docutils literal notranslate"><span class="pre">Encoder.encoder</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Encoder.encoders"><code class="docutils literal notranslate"><span class="pre">Encoder.encoders</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Encoder.from_base64"><code class="docutils literal notranslate"><span class="pre">Encoder.from_base64()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Encoder.load_hybrid"><code class="docutils literal notranslate"><span class="pre">Encoder.load_hybrid</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Encoder.shape"><code class="docutils literal notranslate"><span class="pre">Encoder.shape</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Encoder.to_base64"><code class="docutils literal notranslate"><span class="pre">Encoder.to_base64()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Encoder.type_id"><code class="docutils literal notranslate"><span class="pre">Encoder.type_id</span></code></a></li>
 </ul>
 </li>
@@ -457,7 +461,13 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="superduperdb.html#superduperdb.Serializer"><code class="docutils literal notranslate"><span class="pre">Serializer</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Serializer.object"><code class="docutils literal notranslate"><span class="pre">Serializer.object</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Serializer.construct"><code class="docutils literal notranslate"><span class="pre">Serializer.construct()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Serializer.constructor"><code class="docutils literal notranslate"><span class="pre">Serializer.constructor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Serializer.decode"><code class="docutils literal notranslate"><span class="pre">Serializer.decode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Serializer.decoder"><code class="docutils literal notranslate"><span class="pre">Serializer.decoder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Serializer.encode"><code class="docutils literal notranslate"><span class="pre">Serializer.encode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Serializer.encoder"><code class="docutils literal notranslate"><span class="pre">Serializer.encoder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Serializer.info"><code class="docutils literal notranslate"><span class="pre">Serializer.info</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Serializer.pre_create"><code class="docutils literal notranslate"><span class="pre">Serializer.pre_create()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.Serializer.type_id"><code class="docutils literal notranslate"><span class="pre">Serializer.type_id</span></code></a></li>
 </ul>
@@ -473,7 +483,6 @@
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.VectorIndex.metric_values"><code class="docutils literal notranslate"><span class="pre">VectorIndex.metric_values</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.VectorIndex.models_keys"><code class="docutils literal notranslate"><span class="pre">VectorIndex.models_keys</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.VectorIndex.on_load"><code class="docutils literal notranslate"><span class="pre">VectorIndex.on_load()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.VectorIndex.post_create"><code class="docutils literal notranslate"><span class="pre">VectorIndex.post_create()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="superduperdb.html#superduperdb.VectorIndex.type_id"><code class="docutils literal notranslate"><span class="pre">VectorIndex.type_id</span></code></a></li>
 </ul>
 </li>
