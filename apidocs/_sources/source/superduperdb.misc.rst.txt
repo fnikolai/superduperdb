@@ -20,6 +20,14 @@ superduperdb.misc.annotations module
    :undoc-members:
    :show-inheritance:
 
+superduperdb.misc.archives module
+---------------------------------
+
+.. automodule:: superduperdb.misc.archives
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 superduperdb.misc.colors module
 -------------------------------
 
@@ -60,10 +68,10 @@ superduperdb.misc.files module
    :undoc-members:
    :show-inheritance:
 
-superduperdb.misc.for\_each module
-----------------------------------
+superduperdb.misc.hash module
+-----------------------------
 
-.. automodule:: superduperdb.misc.for_each
+.. automodule:: superduperdb.misc.hash
    :members:
    :undoc-members:
    :show-inheritance:
@@ -104,14 +112,6 @@ superduperdb.misc.special\_dicts module
 ---------------------------------------
 
 .. automodule:: superduperdb.misc.special_dicts
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-superduperdb.misc.tree module
------------------------------
-
-.. automodule:: superduperdb.misc.tree
    :members:
    :undoc-members:
    :show-inheritance:
