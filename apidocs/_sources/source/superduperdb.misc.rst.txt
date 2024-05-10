@@ -20,10 +20,26 @@ superduperdb.misc.annotations module
    :undoc-members:
    :show-inheritance:
 
+superduperdb.misc.anonymize module
+----------------------------------
+
+.. automodule:: superduperdb.misc.anonymize
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 superduperdb.misc.archives module
 ---------------------------------
 
 .. automodule:: superduperdb.misc.archives
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+superduperdb.misc.auto\_schema module
+-------------------------------------
+
+.. automodule:: superduperdb.misc.auto_schema
    :members:
    :undoc-members:
    :show-inheritance:
